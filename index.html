@@ -3,134 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Class 6A</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <title>Memory Class 6A - Graduation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
             --primary: #1a2a6c;
             --accent: #b21f1f;
             --gold: #fdbb2d;
+            --boy-color: #3498db;
+            --girl-color: #ff4757;
         }
+        
+        /* BACKGROUND ESTETIK DENGAN GRADASI & PARTIKEL BERJATUHAN */
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
-            background: #fdfdfd;
+            /* Gradasi latar belakang yang estetik dan lembut */
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
             text-align: center;
-        }
-        
-        /* HEADER DENGAN TULISAN KELAS 6 A */
-        header {
-            background: linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white;
-            padding: 80px 20px 100px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-        }
-
-        .class-title {
-            font-family: 'Bebas Neue', cursive; /* Font ala Jersey/Sekolah */
-            font-size: 70px;
-            letter-spacing: 5px;
-            margin: 0;
-            text-shadow: 3px 3px 0px rgba(0,0,0,0.2);
-            color: #fff;
-        }
-
-        .sub-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 22px;
-            font-style: italic;
-            margin-top: -10px;
-            opacity: 0.9;
-        }
-
-        /* BOX STRUKTUR */
-        .leader-box {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            margin: -60px auto 40px;
-            max-width: 500px;
+            color: #333;
+            min-height: 100vh;
             position: relative;
-            z-index: 10;
-            border-top: 5px solid var(--gold);
+            overflow-x: hidden;
         }
 
-        /* GRID PEMANIS */
-        .grid-students {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 15px;
-            padding: 20px;
+        /* EFEK PARTIKEL KERTAS WISUDA BERJATUHAN */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(var(--gold) 10%, transparent 10%),
+                radial-gradient(var(--accent) 10%, transparent 10%),
+                radial-gradient(var(--primary) 10%, transparent 10%);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px, 30px 30px;
+            opacity: 0.1; /* Transparansi partikel */
+            z-index: -1;
+            animation: confetti-fall 10s linear infinite;
         }
-        .name-card {
-            background: #fff;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            font-weight: 600;
-            border: 1px solid #eee;
+
+        @keyframes confetti-fall {
+            0% { background-position: 0 0, 15px 15px, 30px 30px; }
+            100% { background-position: 0 500px, 15px 515px, 30px 530px; }
         }
-        .boy { border-left: 5px solid #3498db; color: #2980b9; }
-        .girl { border-left: 5px solid #ff4757; color: #e84118; }
         
-        h2 { font-family: 'Bebas Neue'; font-size: 32px; letter-spacing: 2px; }
-    </style>
-</head>
-<body>
-
-    <header>
-        <h1 class="class-title">KELAS 6 A</h1>
-        <p class="sub-title">"The Journey Begins, The Memories Stay"</p>
-    </header>
-
-    <div class="leader-box">
-        <h3 style="color: var(--primary); margin-top:0;">Wali Kelas: Ustazah Nabila</h3>
-        <div style="display:flex; justify-content: space-around; font-size: 14px;">
-            <div>
-                <p style="margin:0; color:#888;">Ketua Kelas</p>
-                <p><strong>Aulia</strong></p>
-            </div>
-            <div style="border-left: 1px solid #eee;"></div>
-            <div>
-                <p style="margin:0; color:#888;">Wakil Ketua</p>
-                <p><strong>Arjuna</strong></p>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 style="color: #3498db;">GENTLEMEN</h2>
-        <div class="grid-students">
-            <div class="name-card boy">Nazim</div>
-            <div class="name-card boy">Arjuna</div>
-            <div class="name-card boy">Algi</div>
-            <div class="name-card boy">Bagas</div>
-            <div class="name-card boy">Fauzan</div>
-            <div class="name-card boy">Faeyza</div>
-            <div class="name-card boy">Hafis</div>
-            <div class="name-card boy">Nabil</div>
-            <div class="name-card boy">Rafa</div>
-            <div class="name-card boy">Saud</div>
-            <div class="name-card boy">Hanan</div>
-        </div>
-    </div>
-
-    <div class="section">
-        <h2 style="color: #ff4757;">LADIES</h2>
-        <div class="grid-students">
-            <div class="name-card girl">Qhairen</div>
-            <div class="name-card girl">Aulia</div>
-            <div class="name-card girl">Sabrina</div>
-            <div class="name-card girl">Syafira</div>
-            <div class="name-card girl">Zahrul</div>
-        </div>
-    </div>
-
-    <footer style="background:#1a2a6c; color:white; padding:30px; margin-top:50px;">
-        <p>&copy; 2026 Graduation Moment | Created by ROXY</p>
-    </footer>
-
-</body>
-</html>
+        /* HEADER KELAS 6 A DENGAN GRADASI KUAT */
+        header {
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+            background-size: 200% 200%;
+            animation: gradient-flow 15s ease infinite; /* Efek gradasi bergerak */
+            color: white;
+            padding: 80px 20px
+            
