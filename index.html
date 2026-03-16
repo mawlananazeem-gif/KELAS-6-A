@@ -3,55 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory Class 6A - Graduation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@1,700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    
+    <title>MEMORY 6A - GRADUATION</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary: #1a2a6c; --accent: #b21f1f; --gold: #fdbb2d;
-            --boy-color: #3498db; --girl-color: #ff4757;
-        }
-        body {
-            font-family: 'Poppins', sans-serif; margin: 0;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            text-align: center; color: #333; min-height: 100vh;
-        }
-        header {
-            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            color: white; padding: 60px 20px 100px;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
-        }
-        .class-title { font-family: 'Bebas Neue'; font-size: 65px; margin: 0; letter-spacing: 3px; }
-        .sub-title { font-family: 'Playfair Display'; font-style: italic; font-size: 18px; opacity: 0.9; }
-
-        /* BOX STRUKTUR KELAS */
-        .leader-box {
-            background: white; padding: 25px; border-radius: 20px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            margin: -60px auto 30px; max-width: 90%;
-            position: relative; z-index: 10; border-bottom: 5px solid var(--gold);
-        }
-        .leader-box h3 { color: var(--primary); margin: 0 0 10px 0; font-size: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        :root { --primary: #1a2a6c; --boy: #3498db; --girl: #ff4757; --gold: #fdbb2d; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #f4f4f4; text-align: center; color: #333; }
         
-        .grid-info { display: flex; justify-content: space-around; }
-        .info-item span { font-size: 10px; color: #888; text-transform: uppercase; }
-        .info-item p { margin: 5px 0; font-weight: bold; color: #444; }
-
-        /* DAFTAR NAMA */
-        .section { padding: 20px; }
-        h2 { font-family: 'Bebas Neue'; font-size: 30px; letter-spacing: 2px; margin: 20px 0; }
-        .grid-names {
-            display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-            gap: 12px; max-width: 1000px; margin: auto;
+        /* HEADER */
+        header { 
+            background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); 
+            color: white; padding: 60px 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
-        .card {
-            background: white; padding: 15px; border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-weight: 600;
-        }
-        .boy { border-left: 5px solid var(--boy-color); color: var(--boy-color); }
-        .girl { border-left: 5px solid var(--girl-color); color: var(--girl-color); }
-
-        .extra {
-            background: rgba(255,255,255,0.5); border: 2px dashed var(--gold);
-            margin: 40px auto; padding: 20px;
+        h1 { font-family: 'Bebas Neue'; font-size: 60px; margin: 0; letter-spacing: 4px; }
         
+        /* WALI KELAS & PENGURUS */
+        .box-pengurus {
+            background: white; width: 85%; max-width: 500px; margin: -40px auto 30px;
+            padding: 20px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-bottom: 5px solid var(--gold); position: relative; z-index: 99;
+        }
+        .box-pengurus h2 { color: var(--primary); font-size: 18px; margin: 0 0 10px 0; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        .flex-box { display: flex; justify-content: space-around; font-size: 14px; }
+
+        /* LIST NAMA */
+        .container { padding: 20px; max-width: 1000px; margin: auto; }
+        .title-section { font-family: 'Bebas Neue'; font-size: 30px; margin: 30px 0 15px; letter-spacing: 2px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 12px; }
+        .card { background: white; padding: 15px; border-radius: 12px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .card-boy { border-left: 6px solid var(--boy); color: var(--boy); }
+        .card-girl { border-left: 6px solid var(--girl); color: var(--girl); }
+
+        /* EFEK LOVE */
+        #love-btn { 
+            position: fixed; bottom: 20px; right: 20px; 
+            background: #ff4757; color: white; border: none; 
+            padding: 15px; border-radius: 50%; font-size: 20px; 
+            box-shadow: 0 5px 15px rgba(255,71,87,0.4); cursor: pointer; z-index: 1000;
+        }
+        
+        .extra { font-family: 'Bebas Neue'; color: #888; margin: 40px 0; font-size: 25px; }
+        footer { background: #111; color: white; padding: 30px; margin-top: 50px; font-size: 14px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>KELAS 6 A</h1>
+        <p>Memory of Graduation 2026</p>
+    </header>
+
+    <div class="box-pengurus">
+        <h2>USTAZAH NABILA (Wali Kelas)</h2>
+        <div class="flex-box">
+            <div><small>Ketua Kelas</small><br><strong>Aulia</strong></div>
+            <div style="border-left: 1px solid #eee;"></div>
+            <div><small>Wakil Ketua</small><br><strong>Arjuna</strong></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="title-section" style="color: var(--boy);">GENTLEMEN</div>
+        <div class="grid">
+            <div class="card card-boy">Affandi</div>
+            <div class="card card-
+                
