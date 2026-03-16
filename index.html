@@ -8,55 +8,50 @@
     
     <style>
         :root {
-            --primary: #1a2a6c;
-            --accent: #b21f1f;
-            --gold: #fdbb2d;
-            --boy-color: #3498db;
-            --girl-color: #ff4757;
+            --primary: #1a2a6c; --accent: #b21f1f; --gold: #fdbb2d;
+            --boy-color: #3498db; --girl-color: #ff4757;
         }
-        
-        /* BACKGROUND ESTETIK DENGAN GRADASI & PARTIKEL BERJATUHAN */
         body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            /* Gradasi latar belakang yang estetik dan lembut */
-            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
-            text-align: center;
-            color: #333;
-            min-height: 100vh;
-            position: relative;
-            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif; margin: 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            text-align: center; color: #333; min-height: 100vh;
         }
-
-        /* EFEK PARTIKEL KERTAS WISUDA BERJATUHAN */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(var(--gold) 10%, transparent 10%),
-                radial-gradient(var(--accent) 10%, transparent 10%),
-                radial-gradient(var(--primary) 10%, transparent 10%);
-            background-size: 30px 30px;
-            background-position: 0 0, 15px 15px, 30px 30px;
-            opacity: 0.1; /* Transparansi partikel */
-            z-index: -1;
-            animation: confetti-fall 10s linear infinite;
-        }
-
-        @keyframes confetti-fall {
-            0% { background-position: 0 0, 15px 15px, 30px 30px; }
-            100% { background-position: 0 500px, 15px 515px, 30px 530px; }
-        }
-        
-        /* HEADER KELAS 6 A DENGAN GRADASI KUAT */
         header {
             background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
-            background-size: 200% 200%;
-            animation: gradient-flow 15s ease infinite; /* Efek gradasi bergerak */
-            color: white;
-            padding: 80px 20px
-            
+            color: white; padding: 60px 20px 100px;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+        }
+        .class-title { font-family: 'Bebas Neue'; font-size: 65px; margin: 0; letter-spacing: 3px; }
+        .sub-title { font-family: 'Playfair Display'; font-style: italic; font-size: 18px; opacity: 0.9; }
+
+        /* BOX STRUKTUR KELAS */
+        .leader-box {
+            background: white; padding: 25px; border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            margin: -60px auto 30px; max-width: 90%;
+            position: relative; z-index: 10; border-bottom: 5px solid var(--gold);
+        }
+        .leader-box h3 { color: var(--primary); margin: 0 0 10px 0; font-size: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        .grid-info { display: flex; justify-content: space-around; }
+        .info-item span { font-size: 10px; color: #888; text-transform: uppercase; }
+        .info-item p { margin: 5px 0; font-weight: bold; color: #444; }
+
+        /* DAFTAR NAMA */
+        .section { padding: 20px; }
+        h2 { font-family: 'Bebas Neue'; font-size: 30px; letter-spacing: 2px; margin: 20px 0; }
+        .grid-names {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+            gap: 12px; max-width: 1000px; margin: auto;
+        }
+        .card {
+            background: white; padding: 15px; border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05); font-weight: 600;
+        }
+        .boy { border-left: 5px solid var(--boy-color); color: var(--boy-color); }
+        .girl { border-left: 5px solid var(--girl-color); color: var(--girl-color); }
+
+        .extra {
+            background: rgba(255,255,255,0.5); border: 2px dashed var(--gold);
+            margin: 40px auto; padding: 20px;
+        
